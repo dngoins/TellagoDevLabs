@@ -7,31 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tellago.BizTalk.REST.Resour
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tellago.BizTalk.REST.Services", "Tellago.BizTalk.REST.Services\Tellago.BizTalk.REST.Services.csproj", "{9953DAE7-392A-449A-A255-59AF51869968}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BTSDataServices", "http://localhost:8080/BTSDataServices", "{B4ADF99E-8D6D-4F23-AEB3-812BA02A8E9A}"
-	ProjectSection(WebsiteProperties) = preProject
-		SccProjectName = "Svn"
-		SccAuxPath = "Svn"
-		SccLocalPath = "Svn"
-		SccProvider = "SubversionScc"
-		TargetFramework = "3.5"
-		ProjectReferences = "{9953DAE7-392A-449A-A255-59AF51869968}|Tellago.BizTalk.REST.Services.dll;{882AB3C5-A8FE-4A50-A997-4FE529B91C13}|Tellago.BizTalk.REST.Resources.dll;"
-		Debug.AspNetCompiler.VirtualPath = "/BTSDataServices"
-		Debug.AspNetCompiler.PhysicalPath = "Tellago.BizTalk.REST.ServiceHost\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\BTSDataServices\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/BTSDataServices"
-		Release.AspNetCompiler.PhysicalPath = "Tellago.BizTalk.REST.ServiceHost\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\BTSDataServices\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "Tellago.BizTalk.REST.ServiceHost\"
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "Samples\ConsoleApplication1\ConsoleApplication1.csproj", "{AB757DEE-8D66-4690-9B46-DD3CD6891147}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{212B09DD-C532-438F-8846-90C17D857AAB}"
@@ -39,10 +14,51 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 		BizTalk Data Services.doc = BizTalk Data Services.doc
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Tellago.BizTalk.REST.ServiceHost", "Tellago.BizTalk.REST.ServiceHost", "{7BBC42CE-695A-4615-896A-5BA4ED2D5A4A}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFramework = "3.5"
+		Debug.AspNetCompiler.VirtualPath = "/Tellago.BizTalk.REST.ServiceHost"
+		Debug.AspNetCompiler.PhysicalPath = "Tellago.BizTalk.REST.ServiceHost\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Tellago.BizTalk.REST.ServiceHost\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Tellago.BizTalk.REST.ServiceHost"
+		Release.AspNetCompiler.PhysicalPath = "Tellago.BizTalk.REST.ServiceHost\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Tellago.BizTalk.REST.ServiceHost\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "3282"
+	EndProjectSection
+EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs08.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Tellago.BizTalk.REST.Resources\\Tellago.BizTalk.REST.Resources.csproj
+		SccProjectName1 = Tellago.BizTalk.REST.Resources
+		SccLocalPath1 = Tellago.BizTalk.REST.Resources
+		SccProjectUniqueName2 = Tellago.BizTalk.REST.Services\\Tellago.BizTalk.REST.Services.csproj
+		SccProjectName2 = Tellago.BizTalk.REST.Services
+		SccLocalPath2 = Tellago.BizTalk.REST.Services
+		SccProjectUniqueName3 = Samples\\ConsoleApplication1\\ConsoleApplication1.csproj
+		SccProjectTopLevelParentUniqueName3 = Tellago.BizTalk.REST.sln
+		SccProjectName3 = Samples/ConsoleApplication1
+		SccLocalPath3 = Samples\\ConsoleApplication1
+		SccWebProject4 = true
+		SccProjectUniqueName4 = Tellago.BizTalk.REST.ServiceHost
+		SccLocalPath4 = .
+		SccProjectFilePathRelativizedFromConnection4 = Tellago.BizTalk.REST.ServiceHost\\
+		SccProjectEnlistmentChoice4 = 2
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,19 +73,23 @@ Global
 		{9953DAE7-392A-449A-A255-59AF51869968}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9953DAE7-392A-449A-A255-59AF51869968}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9953DAE7-392A-449A-A255-59AF51869968}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B4ADF99E-8D6D-4F23-AEB3-812BA02A8E9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B4ADF99E-8D6D-4F23-AEB3-812BA02A8E9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B4ADF99E-8D6D-4F23-AEB3-812BA02A8E9A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{B4ADF99E-8D6D-4F23-AEB3-812BA02A8E9A}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{AB757DEE-8D66-4690-9B46-DD3CD6891147}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AB757DEE-8D66-4690-9B46-DD3CD6891147}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB757DEE-8D66-4690-9B46-DD3CD6891147}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB757DEE-8D66-4690-9B46-DD3CD6891147}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BBC42CE-695A-4615-896A-5BA4ED2D5A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BBC42CE-695A-4615-896A-5BA4ED2D5A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BBC42CE-695A-4615-896A-5BA4ED2D5A4A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BBC42CE-695A-4615-896A-5BA4ED2D5A4A}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AB757DEE-8D66-4690-9B46-DD3CD6891147} = {38285A26-576C-4431-A133-0847C6F80B20}
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
 	EndGlobalSection
 EndGlobal
