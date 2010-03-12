@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Tellago.BizTalk.REST.Services.BTSManagementService" Factory="System.Data.Services.DataServiceHostFactory" %>

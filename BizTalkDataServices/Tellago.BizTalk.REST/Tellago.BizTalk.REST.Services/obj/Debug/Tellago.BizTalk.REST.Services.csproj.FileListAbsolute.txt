@@ -1,0 +1,14 @@
+C:\Projects\Tellago\RESTfulBizTalk\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Services\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\Tellago\RESTfulBizTalk\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Services\bin\Debug\Tellago.BizTalk.REST.Services.dll
+C:\Projects\Tellago\RESTfulBizTalk\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Services\bin\Debug\Tellago.BizTalk.REST.Services.pdb
+C:\Projects\Tellago\RESTfulBizTalk\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Services\bin\Debug\Tellago.BizTalk.REST.Resources.dll
+C:\Projects\Tellago\RESTfulBizTalk\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Services\bin\Debug\Tellago.BizTalk.REST.Resources.pdb
+C:\Projects\Tellago\RESTfulBizTalk\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Services\obj\Debug\Tellago.BizTalk.REST.Services.dll
+C:\Projects\Tellago\RESTfulBizTalk\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Services\obj\Debug\Tellago.BizTalk.REST.Services.pdb
+C:\TL\Rddy\trunk\BizTalk Data Services\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Services\bin\Debug\Tellago.BizTalk.REST.Services.dll
+C:\TL\Rddy\trunk\BizTalk Data Services\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Services\bin\Debug\Tellago.BizTalk.REST.Services.pdb
+C:\TL\Rddy\trunk\BizTalk Data Services\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Services\bin\Debug\Tellago.BizTalk.REST.Resources.dll
+C:\TL\Rddy\trunk\BizTalk Data Services\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Services\bin\Debug\Tellago.BizTalk.REST.Resources.pdb
+C:\TL\Rddy\trunk\BizTalk Data Services\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Services\obj\Debug\ResolveAssemblyReference.cache
+C:\TL\Rddy\trunk\BizTalk Data Services\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Services\obj\Debug\Tellago.BizTalk.REST.Services.dll
+C:\TL\Rddy\trunk\BizTalk Data Services\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Services\obj\Debug\Tellago.BizTalk.REST.Services.pdb
