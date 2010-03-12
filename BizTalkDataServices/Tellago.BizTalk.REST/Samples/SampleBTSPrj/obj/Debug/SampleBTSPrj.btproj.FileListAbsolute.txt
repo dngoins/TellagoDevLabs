@@ -1,4 +1,0 @@
-C:\Projects\Tellago\RESTfulBizTalk\Tellago.BizTalk.REST\Samples\SampleBTSPrj\bin\Debug\SampleBTSPrj.dll
-C:\Projects\Tellago\RESTfulBizTalk\Tellago.BizTalk.REST\Samples\SampleBTSPrj\bin\Debug\SampleBTSPrj.pdb
-C:\Projects\Tellago\RESTfulBizTalk\Tellago.BizTalk.REST\Samples\SampleBTSPrj\obj\Debug\SampleBTSPrj.dll
-C:\Projects\Tellago\RESTfulBizTalk\Tellago.BizTalk.REST\Samples\SampleBTSPrj\obj\Debug\SampleBTSPrj.pdb
