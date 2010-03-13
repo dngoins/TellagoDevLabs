@@ -21,6 +21,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Tellago.BizTalk.REST.Servic
 		SccLocalPath = "SAK"
 		SccProvider = "SAK"
 		TargetFramework = "3.5"
+		ProjectReferences = "{882AB3C5-A8FE-4A50-A997-4FE529B91C13}|Tellago.BizTalk.REST.Resources.dll;{9953DAE7-392A-449A-A255-59AF51869968}|Tellago.BizTalk.REST.Services.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/Tellago.BizTalk.REST.ServiceHost"
 		Debug.AspNetCompiler.PhysicalPath = "Tellago.BizTalk.REST.ServiceHost\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Tellago.BizTalk.REST.ServiceHost\"
