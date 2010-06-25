@@ -1,0 +1,528 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Tellago.BizTalk.REST.Resources" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="Application">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="IsConfigured" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="IsDefaultApplication" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsSystem" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Status" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="Orchestrations" Relationship="Tellago.BizTalk.REST.Resources.Application_Orchestrations" FromRole="Application" ToRole="Orchestrations" />
+        <NavigationProperty Name="Assemblies" Relationship="Tellago.BizTalk.REST.Resources.Application_Assemblies" FromRole="Application" ToRole="Assemblies" />
+        <NavigationProperty Name="Transforms" Relationship="Tellago.BizTalk.REST.Resources.Application_Transforms" FromRole="Application" ToRole="Transforms" />
+        <NavigationProperty Name="Pipelines" Relationship="Tellago.BizTalk.REST.Resources.Application_Pipelines" FromRole="Application" ToRole="Pipelines" />
+        <NavigationProperty Name="SendPorts" Relationship="Tellago.BizTalk.REST.Resources.Application_SendPorts" FromRole="Application" ToRole="SendPorts" />
+        <NavigationProperty Name="ReceivePorts" Relationship="Tellago.BizTalk.REST.Resources.Application_ReceivePorts" FromRole="Application" ToRole="ReceivePorts" />
+        <NavigationProperty Name="ReceiveLocations" Relationship="Tellago.BizTalk.REST.Resources.Application_ReceiveLocations" FromRole="Application" ToRole="ReceiveLocations" />
+      </EntityType>
+      <EntityType Name="Orchestration">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="AssemblyQualifiedName" Type="Edm.String" Nullable="true" />
+        <Property Name="AutoResumeSuspendedInstances" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AutoSuspendRunningInstances" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AutoTerminateInstances" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Status" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="Application" Relationship="Tellago.BizTalk.REST.Resources.Orchestration_Application" FromRole="Orchestration" ToRole="Application" />
+        <NavigationProperty Name="Assembly" Relationship="Tellago.BizTalk.REST.Resources.Orchestration_Assembly" FromRole="Orchestration" ToRole="Assembly" />
+      </EntityType>
+      <EntityType Name="Assembly">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="Culture" Type="Edm.String" Nullable="true" />
+        <Property Name="DisplayName" Type="Edm.String" Nullable="true" />
+        <Property Name="IsSystem" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="PublicKeyToken" Type="Edm.String" Nullable="true" />
+        <Property Name="Version" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="Application" Relationship="Tellago.BizTalk.REST.Resources.Assembly_Application" FromRole="Assembly" ToRole="Application" />
+        <NavigationProperty Name="Orchestrations" Relationship="Tellago.BizTalk.REST.Resources.Assembly_Orchestrations" FromRole="Assembly" ToRole="Orchestrations" />
+        <NavigationProperty Name="Pipelines" Relationship="Tellago.BizTalk.REST.Resources.Assembly_Pipelines" FromRole="Assembly" ToRole="Pipelines" />
+        <NavigationProperty Name="Transforms" Relationship="Tellago.BizTalk.REST.Resources.Assembly_Transforms" FromRole="Assembly" ToRole="Transforms" />
+      </EntityType>
+      <EntityType Name="Host">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="IsDefault" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="NTGroupName" Type="Edm.String" Nullable="true" />
+        <Property Name="Type" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="HostInstances" Relationship="Tellago.BizTalk.REST.Resources.Host_HostInstances" FromRole="Host" ToRole="HostInstances" />
+      </EntityType>
+      <EntityType Name="HostInstance">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="State" Type="Edm.String" Nullable="true" />
+        <Property Name="HostName" Type="Edm.String" Nullable="true" />
+        <Property Name="HostType" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="Party">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="SendPorts" Relationship="Tellago.BizTalk.REST.Resources.Party_SendPorts" FromRole="Party" ToRole="SendPorts" />
+      </EntityType>
+      <EntityType Name="Pipeline">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="AssemblyQualifiedName" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Type" Type="Edm.String" Nullable="true" />
+        <Property Name="Tracking" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="Assembly" Relationship="Tellago.BizTalk.REST.Resources.Pipeline_Assembly" FromRole="Pipeline" ToRole="Assembly" />
+      </EntityType>
+      <EntityType Name="ReceiveHandler">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="TransportType" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="Host" Relationship="Tellago.BizTalk.REST.Resources.ReceiveHandler_Host" FromRole="ReceiveHandler" ToRole="Host" />
+      </EntityType>
+      <EntityType Name="Schema">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="AlwaysTrackAllProperties" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="RootName" Type="Edm.String" Nullable="true" />
+        <Property Name="TargetNamespace" Type="Edm.String" Nullable="true" />
+        <Property Name="XmlContent" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="Application" Relationship="Tellago.BizTalk.REST.Resources.Schema_Application" FromRole="Schema" ToRole="Application" />
+        <NavigationProperty Name="Assembly" Relationship="Tellago.BizTalk.REST.Resources.Schema_Assembly" FromRole="Schema" ToRole="Assembly" />
+      </EntityType>
+      <EntityType Name="Transform">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="AssemblyQualifiedName" Type="Edm.String" Nullable="true" />
+        <Property Name="XmlContent" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="Assembly" Relationship="Tellago.BizTalk.REST.Resources.Transform_Assembly" FromRole="Transform" ToRole="Assembly" />
+        <NavigationProperty Name="Application" Relationship="Tellago.BizTalk.REST.Resources.Transform_Application" FromRole="Transform" ToRole="Application" />
+        <NavigationProperty Name="SourceSchema" Relationship="Tellago.BizTalk.REST.Resources.Transform_SourceSchema" FromRole="Transform" ToRole="SourceSchema" />
+        <NavigationProperty Name="TargetSchema" Relationship="Tellago.BizTalk.REST.Resources.Transform_TargetSchema" FromRole="Transform" ToRole="TargetSchema" />
+      </EntityType>
+      <EntityType Name="InProcessInstance" BaseType="Tellago.BizTalk.REST.Resources.Instance">
+        <Property Name="Adapter" Type="Edm.String" Nullable="true" />
+        <Property Name="CurrentProcessingServer" Type="Edm.String" Nullable="true" />
+        <Property Name="ErrorCategory" Type="Edm.String" Nullable="true" />
+        <Property Name="ErrorCode" Type="Edm.String" Nullable="true" />
+        <Property Name="ErrorProcessingServer" Type="Edm.String" Nullable="true" />
+        <Property Name="PendingOperation" Type="Edm.String" Nullable="true" />
+        <Property Name="SuspendTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="MessageBoxDB" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="Messages" Relationship="Tellago.BizTalk.REST.Resources.InProcessInstance_Messages" FromRole="InProcessInstance" ToRole="Messages" />
+      </EntityType>
+      <EntityType Name="Instance">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.String" Nullable="false" />
+        <Property Name="InstanceClass" Type="Edm.String" Nullable="true" />
+        <Property Name="CreationTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="ErrorDescription" Type="Edm.String" Nullable="true" />
+        <Property Name="InstanceStatus" Type="Edm.String" Nullable="true" />
+        <Property Name="ServiceType" Type="Edm.String" Nullable="true" />
+        <Property Name="ServiceTypeID" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="SendPort">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Filter" Type="Edm.String" Nullable="true" />
+        <Property Name="IsDynamic" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsTwoWay" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="OrderedDelivery" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="PrimaryTransport" Type="Edm.String" Nullable="true" />
+        <Property Name="Priority" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RouteFailedMessages" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SecondaryTransport" Type="Edm.String" Nullable="true" />
+        <Property Name="Status" Type="Edm.String" Nullable="true" />
+        <Property Name="StopSendingOnFailure" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Tracking" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="Application" Relationship="Tellago.BizTalk.REST.Resources.SendPort_Application" FromRole="SendPort" ToRole="Application" />
+        <NavigationProperty Name="InboundTransforms" Relationship="Tellago.BizTalk.REST.Resources.SendPort_InboundTransforms" FromRole="SendPort" ToRole="InboundTransforms" />
+        <NavigationProperty Name="OutboundTransforms" Relationship="Tellago.BizTalk.REST.Resources.SendPort_OutboundTransforms" FromRole="SendPort" ToRole="OutboundTransforms" />
+        <NavigationProperty Name="ReceivePipeline" Relationship="Tellago.BizTalk.REST.Resources.SendPort_ReceivePipeline" FromRole="SendPort" ToRole="ReceivePipeline" />
+        <NavigationProperty Name="SendPipeline" Relationship="Tellago.BizTalk.REST.Resources.SendPort_SendPipeline" FromRole="SendPort" ToRole="SendPipeline" />
+      </EntityType>
+      <EntityType Name="ReceivePort">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="IsTwoWay" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="RouteFailedMessage" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Tracking" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="ReceiveLocations" Relationship="Tellago.BizTalk.REST.Resources.ReceivePort_ReceiveLocations" FromRole="ReceivePort" ToRole="ReceiveLocations" />
+      </EntityType>
+      <EntityType Name="Message">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.String" Nullable="false" />
+        <Property Name="BodyPartName" Type="Edm.String" Nullable="true" />
+        <Property Name="PartCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IsMutable" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Body" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="ContextProperties" Relationship="Tellago.BizTalk.REST.Resources.Message_ContextProperties" FromRole="Message" ToRole="ContextProperties" />
+      </EntityType>
+      <EntityType Name="ContextProperty">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="Namespace" Type="Edm.String" Nullable="true" />
+        <Property Name="Value" Type="Edm.String" Nullable="true" />
+        <Property Name="IsPromoted" Type="Edm.Boolean" Nullable="false" />
+      </EntityType>
+      <EntityType Name="ReceiveLocation">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" />
+        <Property Name="Address" Type="Edm.String" Nullable="true" />
+        <Property Name="Enable" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="EndDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="FromTime" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="EndDateEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsPrimary" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="PublicAddress" Type="Edm.String" Nullable="true" />
+        <Property Name="StartDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="StartDateEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="TransportType" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="ReceivePipeline" Relationship="Tellago.BizTalk.REST.Resources.ReceiveLocation_ReceivePipeline" FromRole="ReceiveLocation" ToRole="ReceivePipeline" />
+        <NavigationProperty Name="SendPipeline" Relationship="Tellago.BizTalk.REST.Resources.ReceiveLocation_SendPipeline" FromRole="ReceiveLocation" ToRole="SendPipeline" />
+        <NavigationProperty Name="ReceiveHandler" Relationship="Tellago.BizTalk.REST.Resources.ReceiveLocation_ReceiveHandler" FromRole="ReceiveLocation" ToRole="ReceiveHandler" />
+      </EntityType>
+      <Association Name="Application_Orchestrations">
+        <End Role="Application" Type="Tellago.BizTalk.REST.Resources.Application" Multiplicity="*" />
+        <End Role="Orchestrations" Type="Tellago.BizTalk.REST.Resources.Orchestration" Multiplicity="*" />
+      </Association>
+      <Association Name="Application_Assemblies">
+        <End Role="Application" Type="Tellago.BizTalk.REST.Resources.Application" Multiplicity="*" />
+        <End Role="Assemblies" Type="Tellago.BizTalk.REST.Resources.Assembly" Multiplicity="*" />
+      </Association>
+      <Association Name="Application_Transforms">
+        <End Role="Application" Type="Tellago.BizTalk.REST.Resources.Application" Multiplicity="*" />
+        <End Role="Transforms" Type="Tellago.BizTalk.REST.Resources.Transform" Multiplicity="*" />
+      </Association>
+      <Association Name="Application_Pipelines">
+        <End Role="Application" Type="Tellago.BizTalk.REST.Resources.Application" Multiplicity="*" />
+        <End Role="Pipelines" Type="Tellago.BizTalk.REST.Resources.Pipeline" Multiplicity="*" />
+      </Association>
+      <Association Name="Application_SendPorts">
+        <End Role="Application" Type="Tellago.BizTalk.REST.Resources.Application" Multiplicity="*" />
+        <End Role="SendPorts" Type="Tellago.BizTalk.REST.Resources.SendPort" Multiplicity="*" />
+      </Association>
+      <Association Name="Application_ReceivePorts">
+        <End Role="Application" Type="Tellago.BizTalk.REST.Resources.Application" Multiplicity="*" />
+        <End Role="ReceivePorts" Type="Tellago.BizTalk.REST.Resources.ReceivePort" Multiplicity="*" />
+      </Association>
+      <Association Name="Application_ReceiveLocations">
+        <End Role="Application" Type="Tellago.BizTalk.REST.Resources.Application" Multiplicity="*" />
+        <End Role="ReceiveLocations" Type="Tellago.BizTalk.REST.Resources.ReceiveLocation" Multiplicity="*" />
+      </Association>
+      <Association Name="Orchestration_Application">
+        <End Role="Orchestration" Type="Tellago.BizTalk.REST.Resources.Orchestration" Multiplicity="*" />
+        <End Role="Application" Type="Tellago.BizTalk.REST.Resources.Application" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Orchestration_Assembly">
+        <End Role="Orchestration" Type="Tellago.BizTalk.REST.Resources.Orchestration" Multiplicity="*" />
+        <End Role="Assembly" Type="Tellago.BizTalk.REST.Resources.Assembly" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Assembly_Application">
+        <End Role="Assembly" Type="Tellago.BizTalk.REST.Resources.Assembly" Multiplicity="*" />
+        <End Role="Application" Type="Tellago.BizTalk.REST.Resources.Application" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Assembly_Orchestrations">
+        <End Role="Assembly" Type="Tellago.BizTalk.REST.Resources.Assembly" Multiplicity="*" />
+        <End Role="Orchestrations" Type="Tellago.BizTalk.REST.Resources.Orchestration" Multiplicity="*" />
+      </Association>
+      <Association Name="Assembly_Pipelines">
+        <End Role="Assembly" Type="Tellago.BizTalk.REST.Resources.Assembly" Multiplicity="*" />
+        <End Role="Pipelines" Type="Tellago.BizTalk.REST.Resources.Pipeline" Multiplicity="*" />
+      </Association>
+      <Association Name="Assembly_Transforms">
+        <End Role="Assembly" Type="Tellago.BizTalk.REST.Resources.Assembly" Multiplicity="*" />
+        <End Role="Transforms" Type="Tellago.BizTalk.REST.Resources.Transform" Multiplicity="*" />
+      </Association>
+      <Association Name="Host_HostInstances">
+        <End Role="Host" Type="Tellago.BizTalk.REST.Resources.Host" Multiplicity="*" />
+        <End Role="HostInstances" Type="Tellago.BizTalk.REST.Resources.HostInstance" Multiplicity="*" />
+      </Association>
+      <Association Name="Party_SendPorts">
+        <End Role="Party" Type="Tellago.BizTalk.REST.Resources.Party" Multiplicity="*" />
+        <End Role="SendPorts" Type="Tellago.BizTalk.REST.Resources.SendPort" Multiplicity="*" />
+      </Association>
+      <Association Name="Pipeline_Assembly">
+        <End Role="Pipeline" Type="Tellago.BizTalk.REST.Resources.Pipeline" Multiplicity="*" />
+        <End Role="Assembly" Type="Tellago.BizTalk.REST.Resources.Assembly" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ReceiveHandler_Host">
+        <End Role="ReceiveHandler" Type="Tellago.BizTalk.REST.Resources.ReceiveHandler" Multiplicity="*" />
+        <End Role="Host" Type="Tellago.BizTalk.REST.Resources.Host" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Schema_Application">
+        <End Role="Schema" Type="Tellago.BizTalk.REST.Resources.Schema" Multiplicity="*" />
+        <End Role="Application" Type="Tellago.BizTalk.REST.Resources.Application" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Schema_Assembly">
+        <End Role="Schema" Type="Tellago.BizTalk.REST.Resources.Schema" Multiplicity="*" />
+        <End Role="Assembly" Type="Tellago.BizTalk.REST.Resources.Assembly" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Transform_Assembly">
+        <End Role="Transform" Type="Tellago.BizTalk.REST.Resources.Transform" Multiplicity="*" />
+        <End Role="Assembly" Type="Tellago.BizTalk.REST.Resources.Assembly" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Transform_Application">
+        <End Role="Transform" Type="Tellago.BizTalk.REST.Resources.Transform" Multiplicity="*" />
+        <End Role="Application" Type="Tellago.BizTalk.REST.Resources.Application" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Transform_SourceSchema">
+        <End Role="Transform" Type="Tellago.BizTalk.REST.Resources.Transform" Multiplicity="*" />
+        <End Role="SourceSchema" Type="Tellago.BizTalk.REST.Resources.Schema" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Transform_TargetSchema">
+        <End Role="Transform" Type="Tellago.BizTalk.REST.Resources.Transform" Multiplicity="*" />
+        <End Role="TargetSchema" Type="Tellago.BizTalk.REST.Resources.Schema" Multiplicity="0..1" />
+      </Association>
+      <Association Name="InProcessInstance_Messages">
+        <End Role="InProcessInstance" Type="Tellago.BizTalk.REST.Resources.InProcessInstance" Multiplicity="*" />
+        <End Role="Messages" Type="Tellago.BizTalk.REST.Resources.Message" Multiplicity="*" />
+      </Association>
+      <Association Name="SendPort_Application">
+        <End Role="SendPort" Type="Tellago.BizTalk.REST.Resources.SendPort" Multiplicity="*" />
+        <End Role="Application" Type="Tellago.BizTalk.REST.Resources.Application" Multiplicity="0..1" />
+      </Association>
+      <Association Name="SendPort_InboundTransforms">
+        <End Role="SendPort" Type="Tellago.BizTalk.REST.Resources.SendPort" Multiplicity="*" />
+        <End Role="InboundTransforms" Type="Tellago.BizTalk.REST.Resources.Transform" Multiplicity="*" />
+      </Association>
+      <Association Name="SendPort_OutboundTransforms">
+        <End Role="SendPort" Type="Tellago.BizTalk.REST.Resources.SendPort" Multiplicity="*" />
+        <End Role="OutboundTransforms" Type="Tellago.BizTalk.REST.Resources.Transform" Multiplicity="*" />
+      </Association>
+      <Association Name="SendPort_ReceivePipeline">
+        <End Role="SendPort" Type="Tellago.BizTalk.REST.Resources.SendPort" Multiplicity="*" />
+        <End Role="ReceivePipeline" Type="Tellago.BizTalk.REST.Resources.Pipeline" Multiplicity="0..1" />
+      </Association>
+      <Association Name="SendPort_SendPipeline">
+        <End Role="SendPort" Type="Tellago.BizTalk.REST.Resources.SendPort" Multiplicity="*" />
+        <End Role="SendPipeline" Type="Tellago.BizTalk.REST.Resources.Pipeline" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ReceivePort_ReceiveLocations">
+        <End Role="ReceivePort" Type="Tellago.BizTalk.REST.Resources.ReceivePort" Multiplicity="*" />
+        <End Role="ReceiveLocations" Type="Tellago.BizTalk.REST.Resources.ReceiveLocation" Multiplicity="*" />
+      </Association>
+      <Association Name="Message_ContextProperties">
+        <End Role="Message" Type="Tellago.BizTalk.REST.Resources.Message" Multiplicity="*" />
+        <End Role="ContextProperties" Type="Tellago.BizTalk.REST.Resources.ContextProperty" Multiplicity="*" />
+      </Association>
+      <Association Name="ReceiveLocation_ReceivePipeline">
+        <End Role="ReceiveLocation" Type="Tellago.BizTalk.REST.Resources.ReceiveLocation" Multiplicity="*" />
+        <End Role="ReceivePipeline" Type="Tellago.BizTalk.REST.Resources.Pipeline" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ReceiveLocation_SendPipeline">
+        <End Role="ReceiveLocation" Type="Tellago.BizTalk.REST.Resources.ReceiveLocation" Multiplicity="*" />
+        <End Role="SendPipeline" Type="Tellago.BizTalk.REST.Resources.Pipeline" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ReceiveLocation_ReceiveHandler">
+        <End Role="ReceiveLocation" Type="Tellago.BizTalk.REST.Resources.ReceiveLocation" Multiplicity="*" />
+        <End Role="ReceiveHandler" Type="Tellago.BizTalk.REST.Resources.ReceiveHandler" Multiplicity="0..1" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Tellago.BizTalk.REST.Services" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityContainer Name="BTSManagementServiceContext" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Applications" EntityType="Tellago.BizTalk.REST.Resources.Application" />
+        <EntitySet Name="Orchestrations" EntityType="Tellago.BizTalk.REST.Resources.Orchestration" />
+        <EntitySet Name="Assemblies" EntityType="Tellago.BizTalk.REST.Resources.Assembly" />
+        <EntitySet Name="Hosts" EntityType="Tellago.BizTalk.REST.Resources.Host" />
+        <EntitySet Name="HostInstances" EntityType="Tellago.BizTalk.REST.Resources.HostInstance" />
+        <EntitySet Name="Parties" EntityType="Tellago.BizTalk.REST.Resources.Party" />
+        <EntitySet Name="Pipelines" EntityType="Tellago.BizTalk.REST.Resources.Pipeline" />
+        <EntitySet Name="ReceiveHandlers" EntityType="Tellago.BizTalk.REST.Resources.ReceiveHandler" />
+        <EntitySet Name="Schemas" EntityType="Tellago.BizTalk.REST.Resources.Schema" />
+        <EntitySet Name="Transforms" EntityType="Tellago.BizTalk.REST.Resources.Transform" />
+        <EntitySet Name="InProcessInstances" EntityType="Tellago.BizTalk.REST.Resources.InProcessInstance" />
+        <EntitySet Name="SendPorts" EntityType="Tellago.BizTalk.REST.Resources.SendPort" />
+        <EntitySet Name="ReceivePorts" EntityType="Tellago.BizTalk.REST.Resources.ReceivePort" />
+        <EntitySet Name="InProcessMessages" EntityType="Tellago.BizTalk.REST.Resources.Message" />
+        <EntitySet Name="ContextProperties" EntityType="Tellago.BizTalk.REST.Resources.ContextProperty" />
+        <EntitySet Name="ReceiveLocations" EntityType="Tellago.BizTalk.REST.Resources.ReceiveLocation" />
+        <AssociationSet Name="Application_Orchestrations" Association="Tellago.BizTalk.REST.Resources.Application_Orchestrations">
+          <End Role="Application" EntitySet="Applications" />
+          <End Role="Orchestrations" EntitySet="Orchestrations" />
+        </AssociationSet>
+        <AssociationSet Name="Application_Assemblies" Association="Tellago.BizTalk.REST.Resources.Application_Assemblies">
+          <End Role="Application" EntitySet="Applications" />
+          <End Role="Assemblies" EntitySet="Assemblies" />
+        </AssociationSet>
+        <AssociationSet Name="Application_Transforms" Association="Tellago.BizTalk.REST.Resources.Application_Transforms">
+          <End Role="Application" EntitySet="Applications" />
+          <End Role="Transforms" EntitySet="Transforms" />
+        </AssociationSet>
+        <AssociationSet Name="Application_Pipelines" Association="Tellago.BizTalk.REST.Resources.Application_Pipelines">
+          <End Role="Application" EntitySet="Applications" />
+          <End Role="Pipelines" EntitySet="Pipelines" />
+        </AssociationSet>
+        <AssociationSet Name="Application_SendPorts" Association="Tellago.BizTalk.REST.Resources.Application_SendPorts">
+          <End Role="Application" EntitySet="Applications" />
+          <End Role="SendPorts" EntitySet="SendPorts" />
+        </AssociationSet>
+        <AssociationSet Name="Application_ReceivePorts" Association="Tellago.BizTalk.REST.Resources.Application_ReceivePorts">
+          <End Role="Application" EntitySet="Applications" />
+          <End Role="ReceivePorts" EntitySet="ReceivePorts" />
+        </AssociationSet>
+        <AssociationSet Name="Application_ReceiveLocations" Association="Tellago.BizTalk.REST.Resources.Application_ReceiveLocations">
+          <End Role="Application" EntitySet="Applications" />
+          <End Role="ReceiveLocations" EntitySet="ReceiveLocations" />
+        </AssociationSet>
+        <AssociationSet Name="Orchestration_Application" Association="Tellago.BizTalk.REST.Resources.Orchestration_Application">
+          <End Role="Orchestration" EntitySet="Orchestrations" />
+          <End Role="Application" EntitySet="Applications" />
+        </AssociationSet>
+        <AssociationSet Name="Orchestration_Assembly" Association="Tellago.BizTalk.REST.Resources.Orchestration_Assembly">
+          <End Role="Orchestration" EntitySet="Orchestrations" />
+          <End Role="Assembly" EntitySet="Assemblies" />
+        </AssociationSet>
+        <AssociationSet Name="Assembly_Application" Association="Tellago.BizTalk.REST.Resources.Assembly_Application">
+          <End Role="Assembly" EntitySet="Assemblies" />
+          <End Role="Application" EntitySet="Applications" />
+        </AssociationSet>
+        <AssociationSet Name="Assembly_Orchestrations" Association="Tellago.BizTalk.REST.Resources.Assembly_Orchestrations">
+          <End Role="Assembly" EntitySet="Assemblies" />
+          <End Role="Orchestrations" EntitySet="Orchestrations" />
+        </AssociationSet>
+        <AssociationSet Name="Assembly_Pipelines" Association="Tellago.BizTalk.REST.Resources.Assembly_Pipelines">
+          <End Role="Assembly" EntitySet="Assemblies" />
+          <End Role="Pipelines" EntitySet="Pipelines" />
+        </AssociationSet>
+        <AssociationSet Name="Assembly_Transforms" Association="Tellago.BizTalk.REST.Resources.Assembly_Transforms">
+          <End Role="Assembly" EntitySet="Assemblies" />
+          <End Role="Transforms" EntitySet="Transforms" />
+        </AssociationSet>
+        <AssociationSet Name="Host_HostInstances" Association="Tellago.BizTalk.REST.Resources.Host_HostInstances">
+          <End Role="Host" EntitySet="Hosts" />
+          <End Role="HostInstances" EntitySet="HostInstances" />
+        </AssociationSet>
+        <AssociationSet Name="Party_SendPorts" Association="Tellago.BizTalk.REST.Resources.Party_SendPorts">
+          <End Role="Party" EntitySet="Parties" />
+          <End Role="SendPorts" EntitySet="SendPorts" />
+        </AssociationSet>
+        <AssociationSet Name="Pipeline_Assembly" Association="Tellago.BizTalk.REST.Resources.Pipeline_Assembly">
+          <End Role="Pipeline" EntitySet="Pipelines" />
+          <End Role="Assembly" EntitySet="Assemblies" />
+        </AssociationSet>
+        <AssociationSet Name="ReceiveHandler_Host" Association="Tellago.BizTalk.REST.Resources.ReceiveHandler_Host">
+          <End Role="ReceiveHandler" EntitySet="ReceiveHandlers" />
+          <End Role="Host" EntitySet="Hosts" />
+        </AssociationSet>
+        <AssociationSet Name="Schema_Application" Association="Tellago.BizTalk.REST.Resources.Schema_Application">
+          <End Role="Schema" EntitySet="Schemas" />
+          <End Role="Application" EntitySet="Applications" />
+        </AssociationSet>
+        <AssociationSet Name="Schema_Assembly" Association="Tellago.BizTalk.REST.Resources.Schema_Assembly">
+          <End Role="Schema" EntitySet="Schemas" />
+          <End Role="Assembly" EntitySet="Assemblies" />
+        </AssociationSet>
+        <AssociationSet Name="Transform_Assembly" Association="Tellago.BizTalk.REST.Resources.Transform_Assembly">
+          <End Role="Transform" EntitySet="Transforms" />
+          <End Role="Assembly" EntitySet="Assemblies" />
+        </AssociationSet>
+        <AssociationSet Name="Transform_Application" Association="Tellago.BizTalk.REST.Resources.Transform_Application">
+          <End Role="Transform" EntitySet="Transforms" />
+          <End Role="Application" EntitySet="Applications" />
+        </AssociationSet>
+        <AssociationSet Name="Transform_SourceSchema" Association="Tellago.BizTalk.REST.Resources.Transform_SourceSchema">
+          <End Role="Transform" EntitySet="Transforms" />
+          <End Role="SourceSchema" EntitySet="Schemas" />
+        </AssociationSet>
+        <AssociationSet Name="Transform_TargetSchema" Association="Tellago.BizTalk.REST.Resources.Transform_TargetSchema">
+          <End Role="Transform" EntitySet="Transforms" />
+          <End Role="TargetSchema" EntitySet="Schemas" />
+        </AssociationSet>
+        <AssociationSet Name="InProcessInstance_Messages" Association="Tellago.BizTalk.REST.Resources.InProcessInstance_Messages">
+          <End Role="InProcessInstance" EntitySet="InProcessInstances" />
+          <End Role="Messages" EntitySet="InProcessMessages" />
+        </AssociationSet>
+        <AssociationSet Name="SendPort_Application" Association="Tellago.BizTalk.REST.Resources.SendPort_Application">
+          <End Role="SendPort" EntitySet="SendPorts" />
+          <End Role="Application" EntitySet="Applications" />
+        </AssociationSet>
+        <AssociationSet Name="SendPort_InboundTransforms" Association="Tellago.BizTalk.REST.Resources.SendPort_InboundTransforms">
+          <End Role="SendPort" EntitySet="SendPorts" />
+          <End Role="InboundTransforms" EntitySet="Transforms" />
+        </AssociationSet>
+        <AssociationSet Name="SendPort_OutboundTransforms" Association="Tellago.BizTalk.REST.Resources.SendPort_OutboundTransforms">
+          <End Role="SendPort" EntitySet="SendPorts" />
+          <End Role="OutboundTransforms" EntitySet="Transforms" />
+        </AssociationSet>
+        <AssociationSet Name="SendPort_ReceivePipeline" Association="Tellago.BizTalk.REST.Resources.SendPort_ReceivePipeline">
+          <End Role="SendPort" EntitySet="SendPorts" />
+          <End Role="ReceivePipeline" EntitySet="Pipelines" />
+        </AssociationSet>
+        <AssociationSet Name="SendPort_SendPipeline" Association="Tellago.BizTalk.REST.Resources.SendPort_SendPipeline">
+          <End Role="SendPort" EntitySet="SendPorts" />
+          <End Role="SendPipeline" EntitySet="Pipelines" />
+        </AssociationSet>
+        <AssociationSet Name="ReceivePort_ReceiveLocations" Association="Tellago.BizTalk.REST.Resources.ReceivePort_ReceiveLocations">
+          <End Role="ReceivePort" EntitySet="ReceivePorts" />
+          <End Role="ReceiveLocations" EntitySet="ReceiveLocations" />
+        </AssociationSet>
+        <AssociationSet Name="Message_ContextProperties" Association="Tellago.BizTalk.REST.Resources.Message_ContextProperties">
+          <End Role="Message" EntitySet="InProcessMessages" />
+          <End Role="ContextProperties" EntitySet="ContextProperties" />
+        </AssociationSet>
+        <AssociationSet Name="ReceiveLocation_ReceivePipeline" Association="Tellago.BizTalk.REST.Resources.ReceiveLocation_ReceivePipeline">
+          <End Role="ReceiveLocation" EntitySet="ReceiveLocations" />
+          <End Role="ReceivePipeline" EntitySet="Pipelines" />
+        </AssociationSet>
+        <AssociationSet Name="ReceiveLocation_SendPipeline" Association="Tellago.BizTalk.REST.Resources.ReceiveLocation_SendPipeline">
+          <End Role="ReceiveLocation" EntitySet="ReceiveLocations" />
+          <End Role="SendPipeline" EntitySet="Pipelines" />
+        </AssociationSet>
+        <AssociationSet Name="ReceiveLocation_ReceiveHandler" Association="Tellago.BizTalk.REST.Resources.ReceiveLocation_ReceiveHandler">
+          <End Role="ReceiveLocation" EntitySet="ReceiveLocations" />
+          <End Role="ReceiveHandler" EntitySet="ReceiveHandlers" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

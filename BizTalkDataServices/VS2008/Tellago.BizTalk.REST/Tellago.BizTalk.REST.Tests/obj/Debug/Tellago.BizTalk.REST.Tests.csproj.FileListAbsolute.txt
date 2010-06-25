@@ -1,0 +1,10 @@
+C:\Projects\BizTalk Data Services\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Tests\bin\Debug\Tellago.BizTalk.REST.Tests.dll
+C:\Projects\BizTalk Data Services\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Tests\bin\Debug\Tellago.BizTalk.REST.Tests.pdb
+C:\Projects\BizTalk Data Services\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\BizTalk Data Services\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Tests\obj\Debug\Tellago.BizTalk.REST.Tests.dll
+C:\Projects\BizTalk Data Services\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Tests\obj\Debug\Tellago.BizTalk.REST.Tests.pdb
+C:\Projects\BizTalk Data Services\VS2008\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Tests\bin\Debug\Tellago.BizTalk.REST.Tests.dll
+C:\Projects\BizTalk Data Services\VS2008\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Tests\bin\Debug\Tellago.BizTalk.REST.Tests.pdb
+C:\Projects\BizTalk Data Services\VS2008\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\BizTalk Data Services\VS2008\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Tests\obj\Debug\Tellago.BizTalk.REST.Tests.dll
+C:\Projects\BizTalk Data Services\VS2008\Tellago.BizTalk.REST\Tellago.BizTalk.REST.Tests\obj\Debug\Tellago.BizTalk.REST.Tests.pdb

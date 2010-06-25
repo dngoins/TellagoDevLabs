@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1ff19444-e92b-4cfb-8a14-e4475e8226d9" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/Tellago.BizTalk.REST.ServiceHost/BizTalkManagementService.svc/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="63276358-e104-436e-bba1-440a20b8277d" SourceId="1" SourceUrl="http://localhost:8080/Tellago.BizTalk.REST.ServiceHost/BizTalkManagementService.svc/" />
+  </Metadata>
+  <Extensions />
+</ReferenceGroup>

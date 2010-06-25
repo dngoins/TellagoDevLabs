@@ -1,0 +1,109 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{38285A26-576C-4431-A133-0847C6F80B20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tellago.BizTalk.REST.Resources", "Tellago.BizTalk.REST.Resources\Tellago.BizTalk.REST.Resources.csproj", "{882AB3C5-A8FE-4A50-A997-4FE529B91C13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tellago.BizTalk.REST.Services", "Tellago.BizTalk.REST.Services\Tellago.BizTalk.REST.Services.csproj", "{9953DAE7-392A-449A-A255-59AF51869968}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{212B09DD-C532-438F-8846-90C17D857AAB}"
+	ProjectSection(SolutionItems) = preProject
+		BizTalk Data Services.doc = BizTalk Data Services.doc
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tellago.BizTalk.REST.Tests", "Tellago.BizTalk.REST.Tests\Tellago.BizTalk.REST.Tests.csproj", "{BF9B2B34-26C3-47EC-8F54-08877449B367}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B3A16810-8EF5-49A6-988F-F933D41EDDB1}"
+	ProjectSection(SolutionItems) = preProject
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+		Tellago.BizTalk.REST.vsmdi = Tellago.BizTalk.REST.vsmdi
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication", "Samples\ConsoleApplication\ConsoleApplication.csproj", "{AB757DEE-8D66-4690-9B46-DD3CD6891147}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "localhost", "http://localhost:8080", "{AC0FB873-ED01-44ED-BDDA-69470794546C}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "Svn"
+		SccAuxPath = "Svn"
+		SccLocalPath = "Svn"
+		SccProvider = "SubversionScc"
+		TargetFramework = "3.5"
+		ProjectReferences = "{882AB3C5-A8FE-4A50-A997-4FE529B91C13}|Tellago.BizTalk.REST.Resources.dll;{9953DAE7-392A-449A-A255-59AF51869968}|Tellago.BizTalk.REST.Services.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost:8080"
+		Debug.AspNetCompiler.PhysicalPath = "Tellago.BizTalk.REST.ServiceHost\"
+		Debug.AspNetCompiler.TargetPath = "C:\Projects\BizTalk Data Services\VS2008\Tellago.BizTalk.REST\PrecompiledWeb\localhost:8080\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost:8080"
+		Release.AspNetCompiler.PhysicalPath = "Tellago.BizTalk.REST.ServiceHost\"
+		Release.AspNetCompiler.TargetPath = "C:\Projects\BizTalk Data Services\VS2008\Tellago.BizTalk.REST\PrecompiledWeb\localhost:8080\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "Tellago.BizTalk.REST.ServiceHost\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs08.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Tellago.BizTalk.REST.Resources\\Tellago.BizTalk.REST.Resources.csproj
+		SccProjectName1 = Tellago.BizTalk.REST.Resources
+		SccLocalPath1 = Tellago.BizTalk.REST.Resources
+		SccProjectUniqueName2 = Tellago.BizTalk.REST.Services\\Tellago.BizTalk.REST.Services.csproj
+		SccProjectName2 = Tellago.BizTalk.REST.Services
+		SccLocalPath2 = Tellago.BizTalk.REST.Services
+		SccProjectUniqueName3 = Tellago.BizTalk.REST.Tests\\Tellago.BizTalk.REST.Tests.csproj
+		SccProjectName3 = Tellago.BizTalk.REST.Tests
+		SccLocalPath3 = Tellago.BizTalk.REST.Tests
+		SccProjectUniqueName4 = Samples\\ConsoleApplication\\ConsoleApplication.csproj
+		SccProjectTopLevelParentUniqueName4 = Tellago.BizTalk.REST.sln
+		SccProjectName4 = Samples/ConsoleApplication
+		SccLocalPath4 = Samples\\ConsoleApplication
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Tellago.BizTalk.REST.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{882AB3C5-A8FE-4A50-A997-4FE529B91C13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{882AB3C5-A8FE-4A50-A997-4FE529B91C13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{882AB3C5-A8FE-4A50-A997-4FE529B91C13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{882AB3C5-A8FE-4A50-A997-4FE529B91C13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9953DAE7-392A-449A-A255-59AF51869968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9953DAE7-392A-449A-A255-59AF51869968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9953DAE7-392A-449A-A255-59AF51869968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9953DAE7-392A-449A-A255-59AF51869968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF9B2B34-26C3-47EC-8F54-08877449B367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF9B2B34-26C3-47EC-8F54-08877449B367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF9B2B34-26C3-47EC-8F54-08877449B367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF9B2B34-26C3-47EC-8F54-08877449B367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB757DEE-8D66-4690-9B46-DD3CD6891147}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB757DEE-8D66-4690-9B46-DD3CD6891147}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB757DEE-8D66-4690-9B46-DD3CD6891147}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB757DEE-8D66-4690-9B46-DD3CD6891147}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC0FB873-ED01-44ED-BDDA-69470794546C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC0FB873-ED01-44ED-BDDA-69470794546C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC0FB873-ED01-44ED-BDDA-69470794546C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC0FB873-ED01-44ED-BDDA-69470794546C}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AB757DEE-8D66-4690-9B46-DD3CD6891147} = {38285A26-576C-4431-A133-0847C6F80B20}
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal
