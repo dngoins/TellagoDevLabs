@@ -1,0 +1,5 @@
+C:\Projects\BizTalk Data Services\VS2008\Tellago.BizTalk.REST\Samples\ConsoleApplication\bin\Debug\ConsoleApplication1.exe
+C:\Projects\BizTalk Data Services\VS2008\Tellago.BizTalk.REST\Samples\ConsoleApplication\bin\Debug\ConsoleApplication1.pdb
+C:\Projects\BizTalk Data Services\VS2008\Tellago.BizTalk.REST\Samples\ConsoleApplication\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\BizTalk Data Services\VS2008\Tellago.BizTalk.REST\Samples\ConsoleApplication\obj\Debug\ConsoleApplication1.exe
+C:\Projects\BizTalk Data Services\VS2008\Tellago.BizTalk.REST\Samples\ConsoleApplication\obj\Debug\ConsoleApplication1.pdb

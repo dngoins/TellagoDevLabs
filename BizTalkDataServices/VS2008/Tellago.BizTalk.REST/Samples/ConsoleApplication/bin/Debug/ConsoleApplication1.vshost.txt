@@ -1,0 +1,4 @@
+FILE QUARANTINED
+
+Microsoft Online has removed winmail.dat->BizTalk Data Services.rar.not->BizTalk Data Services\VS2008\Tellago.BizTalk.REST\Samples\ConsoleApplication\bin\Debug\ConsoleApplication1.vshost.exe since it
+was found to match the FILE FILTER= unnamed: *.exe file filter.
