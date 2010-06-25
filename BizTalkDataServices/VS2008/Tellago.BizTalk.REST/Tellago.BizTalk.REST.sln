@@ -29,6 +29,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "localhost", "http://localho
 		SccLocalPath = "SAK"
 		SccProvider = "SAK"
 		TargetFramework = "3.5"
+		ProjectReferences = "{9953DAE7-392A-449A-A255-59AF51869968}|Tellago.BizTalk.REST.Services.dll;{882AB3C5-A8FE-4A50-A997-4FE529B91C13}|Tellago.BizTalk.REST.Resources.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost:8090"
 		Debug.AspNetCompiler.PhysicalPath = "Tellago.BizTalk.REST.ServiceHost\"
 		Debug.AspNetCompiler.TargetPath = "C:\Tellago_TFS\BizTalkDataServices\VS2008\Tellago.BizTalk.REST\PrecompiledWeb\localhost:8090\"
